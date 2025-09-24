@@ -1,0 +1,27 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  background: #0b0e18;
+  overflow: hidden; 
+}
+
+#app {
+  position: fixed;               /* ⬅︎ 추가: 레이아웃에서 분리해 화면에 고정 */
+  inset: 0;                      /* ⬅︎ 추가: top/right/bottom/left 0 */
+  width: 100svw;                 /* ⬅︎ 추가: 모바일 주소창 변화 대응 */
+  height: 100dvh;                /* ⬅︎ 추가: iOS/Safari 100vh 버그 회피 */
+}
+
+canvas {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  display: block;                /* ⬅︎ 추가: 하단 공백 방지 */
+  width: 100% !important;        /* ⬅︎ 추가: 컨테이너에 딱 맞춤 */
+  height: 100% !important;       /* ⬅︎ 추가 */
+}
+
+/* 터치 스크롤/튕김 방지 */
+#app, canvas {
+  touch-action: none;
+  overscroll-behavior: contain;
+}
